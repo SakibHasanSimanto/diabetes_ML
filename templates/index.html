@@ -1,4 +1,3 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,8 +30,40 @@
       <div class="mt-4">
         <button type="submit" class="btn btn-primary">Predict</button>
         <a href="{{ url_for('history') }}" class="btn btn-secondary">View History</a>
+        <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#userGuideModal">📘 User Guide</button>
       </div>
     </form>
   </div>
+
+  <!-- User Guide Modal -->
+  <div class="modal fade" id="userGuideModal" tabindex="-1" aria-labelledby="userGuideModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title" id="userGuideModalLabel">🔍 Diabetes Predictor – User Guide</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>This application estimates your risk of diabetes. Please input the following values:</p>
+          <ul>
+            <li><strong>Pregnancies</strong>: Number of times pregnant (e.g., 0–15)</li>
+            <li><strong>Glucose</strong>: Blood glucose level (e.g., 70–200)</li>
+            <li><strong>Blood Pressure</strong>: Diastolic pressure in mm Hg (e.g., 60–130)</li>
+            <li><strong>Skin Thickness</strong>: Triceps skinfold in mm (e.g., 10–60)</li>
+            <li><strong>Insulin</strong>: Serum insulin in μU/ml (e.g., 15–300)</li>
+            <li><strong>BMI</strong>: Body Mass Index (e.g., 18.0–50.0)</li>
+            <li><strong>Diabetes Pedigree Function (DPF)</strong>: Hereditary risk score (e.g., 0.1–2.5)</li>
+            <li><strong>Age</strong>: In years (e.g., 21–80)</li>
+          </ul>
+          <p class="text-muted small">All fields are required. Please enter numeric values only. Data is not stored or shared beyond your session.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
